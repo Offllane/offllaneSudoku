@@ -18,4 +18,8 @@ export class GameCellComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectCell(): void {
+    console.log(this.cellPosition);
+  }
+
 }

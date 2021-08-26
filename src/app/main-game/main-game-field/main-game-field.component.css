@@ -1,5 +1,5 @@
 .game-field-wrapper {
-  padding: 30px;
+  margin: 30px;
 }
 
 app-game-cell {
