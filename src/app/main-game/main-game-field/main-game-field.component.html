@@ -1,5 +1,6 @@
-<p>main-game-field works!</p>
-<div *ngFor="let rows of fieldArray; let rowIndex = index">
-  <app-game-cell *ngFor="let value of fieldArray[rowIndex]" [currentValue]="value">
-  </app-game-cell>
+<div class="game-field-wrapper">
+  <div *ngFor="let rows of fieldArray; let rowIndex = index">
+    <app-game-cell *ngFor="let value of fieldArray[rowIndex]" [currentValue]="value">
+    </app-game-cell>
+  </div>
 </div>
