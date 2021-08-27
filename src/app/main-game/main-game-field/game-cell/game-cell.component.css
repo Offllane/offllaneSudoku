@@ -1,55 +1,17 @@
-.game-cell {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  cursor: pointer;
-  -webkit-user-select: none;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "src/stylings/variabels";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   game-cell.component.scss 1:9  root stylesheet */
 
-.game-cell:hover {
-  color: red;
-  background-color: orange;
-  border-radius: 50%;
-}
-
-.right-main-border:before {
-  content: "";
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-right: 5px solid tomato;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/stylings/variabels\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   game-cell.component.scss 1:9  root stylesheet";
 }
-
-.right-additional-border:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 40px;
-  height: 25px;
-  border-right: 2px solid orange;
-}
-
-.bottom-main-border:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-bottom: 5px solid tomato;
-}
-
-.bottom-additional-border:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 25px;
-  height: 40px;
-  border-bottom: 2px solid orange;
-}
-
-/*# sourceMappingURL=game-cell.component.css.map */

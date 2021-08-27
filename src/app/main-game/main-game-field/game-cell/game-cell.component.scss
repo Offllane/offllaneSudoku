@@ -1,3 +1,5 @@
+@import "src/stylings/variabels";
+
 .game-cell {
   position: relative;
   display: flex;
@@ -5,15 +7,35 @@
   align-items: center;
   width: 40px;
   height: 40px;
+  color: $background-dark;
   font-size: 20px;
   cursor: pointer;
   -webkit-user-select:none;
+
+  .current-value {
+    z-index: 1;
+  }
+
+  .inner-cell {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $background-dark;
+    z-index: 0;
+  }
 }
 
-.game-cell:hover {
-  color: red;
-  background-color: orange;
-  border-radius: 50%;
+.game-cell:hover, .active-game-cell {
+
+  .current-value {
+    color: $text-color;
+  }
+
+  .inner-cell {
+    display: block;
+  }
 }
 
 .right-main-border:before {
@@ -22,7 +44,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  border-right: 5px solid tomato;
+  border-right: 5px solid $main3;
 }
 
 .right-additional-border:before {
@@ -31,7 +53,7 @@
   position: absolute;
   width: 40px;
   height: 25px;
-  border-right: 2px solid orange;
+  border-right: 2px solid $main;
 }
 
 .bottom-main-border:after {
@@ -40,7 +62,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  border-bottom: 5px solid tomato;
+  border-bottom: 5px solid $main3;
 }
 
 .bottom-additional-border:after {
@@ -49,5 +71,5 @@
   position: absolute;
   width: 25px;
   height: 40px;
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid $main;
 }

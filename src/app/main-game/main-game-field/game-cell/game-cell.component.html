@@ -1,10 +1,14 @@
-<div class="game-cell right-additional-border"
+<div class="game-cell"
      [ngClass]="{
         'bottom-main-border': cellPosition.rowPosition === 2 || cellPosition.rowPosition === 5,
         'right-main-border': cellPosition.columnPosition === 2 || cellPosition.columnPosition === 5,
         'bottom-additional-border': cellPosition.rowPosition !== 2 && cellPosition.rowPosition !== 5 && cellPosition.rowPosition !== 8,
-        'right-additional-border': cellPosition.columnPosition !== 2 && cellPosition.columnPosition !== 5 && cellPosition.columnPosition !== 8
+        'right-additional-border': cellPosition.columnPosition !== 2 && cellPosition.columnPosition !== 5 && cellPosition.columnPosition !== 8,
+        'active-game-cell': isCurrentCellActive
      }"
      (click)="selectCell()">
-  {{currentValue}}
+  <span class="current-value">{{currentValue}}</span>
+  <div class="inner-cell">
+
+  </div>
 </div>

@@ -1,5 +1,9 @@
+@import "src/stylings/variabels";
+
 .game-field-wrapper {
   margin: 30px;
+  background-color: $text-color;
+
 }
 
 app-game-cell {

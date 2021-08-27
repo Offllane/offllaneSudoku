@@ -7,6 +7,7 @@ import {CellPosition} from "../../models/cellPosition.interface";
   styleUrls: ['./game-cell.component.scss']
 })
 export class GameCellComponent implements OnInit {
+  public isCurrentCellActive = false;
   @Input() currentValue: number | null = null;
   @Input() cellPosition: CellPosition = {
     rowPosition: 0,
@@ -19,6 +20,7 @@ export class GameCellComponent implements OnInit {
   }
 
   selectCell(): void {
+    this.isCurrentCellActive = true;
     console.log(this.cellPosition);
   }
 
