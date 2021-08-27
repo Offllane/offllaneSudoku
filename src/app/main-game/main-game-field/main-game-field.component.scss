@@ -1,11 +1,19 @@
 @import "src/stylings/variabels";
 
 .game-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
   margin: 30px;
   background-color: $text-color;
 
+  .game-cells-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 app-game-cell {
-  display: inline-block;
+  //display: inline-block;
 }

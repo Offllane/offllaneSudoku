@@ -1,5 +1,5 @@
 <div class="game-field-wrapper">
-  <div *ngFor="let rows of fieldArray; let rowIndex = index">
+  <div class="game-cells-row" *ngFor="let rows of fieldArray; let rowIndex = index">
     <app-game-cell *ngFor="let value of fieldArray[rowIndex]; let columnIndex = index;"
                    [currentValue]="value"
                    [cellPosition]="{
