@@ -19,13 +19,14 @@
   }
 
   .inner-cell {
-    display: none;
     width: 70%;
     height: 70%;
     position: absolute;
     border-radius: 50%;
     background-color: $background-dark;
+    opacity: 0;
     z-index: 0;
+    transition: .1s;
   }
 }
 
@@ -36,7 +37,8 @@
   }
 
   .inner-cell {
-    display: block;
+    opacity: 1;
+    transition: .1s;
   }
 }
 
