@@ -8,7 +8,7 @@
      }"
      (click)="selectCell()">
   <span class="current-value">{{currentValue}}</span>
-  <div class="inner-cell">
-
+  <div class="inner-cell"
+        [ngClass]="{'inner-cell-additional': isHelperSelectionActive}">
   </div>
 </div>

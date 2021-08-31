@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Subject} from "rxjs";
 import {gameFieldValues} from "./models/gameFieldValues.type";
 import {CellPosition} from "./models/cellPosition.interface";
+import {ClusterPosition} from "./models/clusterPosition.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class MainGameService {
   public gameFieldValues = new BehaviorSubject(this.currentGameField);
   public unselectAllCellsSubject = new Subject();
   public currentCellPositionSubject = new Subject<CellPosition>();
-  public currentClusterPositionSubject = new Subject();
+  public currentClusterPositionSubject = new Subject<ClusterPosition>();
 
   constructor() { }
 
@@ -21,5 +22,9 @@ export class MainGameService {
 
   public setActiveCell(cellPosition: CellPosition): void {
     this.currentCellPositionSubject.next(cellPosition);
+  }
+
+  public setActiveCluster(clusterPosition: ClusterPosition): void {
+    this.currentClusterPositionSubject.next(clusterPosition);
   }
 }

@@ -12,6 +12,7 @@ import {ClusterPosition} from "../../models/clusterPosition.interface";
 export class GameCellComponent implements OnInit, OnDestroy {
   private dataSubscription = new Subscription();
   public isCurrentCellActive = false;
+  public isHelperSelectionActive = false;
   private clusterPosition: ClusterPosition = {
     verticalPosition: 'top',
     horizontalPosition: 'left'
@@ -33,6 +34,18 @@ export class GameCellComponent implements OnInit, OnDestroy {
     this.dataSubscription.add(this.mainGameService.currentCellPositionSubject.subscribe((cellPosition:CellPosition) => {
       if (this.cellPosition.columnPosition === cellPosition.columnPosition || this.cellPosition.rowPosition === cellPosition.rowPosition) {
         this.isCurrentCellActive = true;
+        this.isHelperSelectionActive = true;
+      }
+      if (this.cellPosition.columnPosition === cellPosition.columnPosition && this.cellPosition.rowPosition === cellPosition.rowPosition) {
+        this.isHelperSelectionActive = false;
+      }
+    }));
+
+    this.dataSubscription.add(this.mainGameService.currentClusterPositionSubject.subscribe((clusterPosition: ClusterPosition) => {
+      if (this.clusterPosition.horizontalPosition === clusterPosition.horizontalPosition &&
+        this.clusterPosition.verticalPosition === clusterPosition.verticalPosition) {
+        this.isCurrentCellActive = true;
+        this.isHelperSelectionActive = true;
       }
     }));
   }
@@ -40,6 +53,7 @@ export class GameCellComponent implements OnInit, OnDestroy {
   selectCell(): void {
     this.mainGameService.unselectAllCells();
     this.isCurrentCellActive = true;
+    this.mainGameService.setActiveCluster(this.clusterPosition);
     this.mainGameService.setActiveCell(this.cellPosition);
   }
 
