@@ -18,7 +18,7 @@ export class GameCellComponent implements OnInit, OnDestroy {
     verticalPosition: 'top',
     horizontalPosition: 'left'
   }
-  public notesArray: Notes = [1, 2,3, 4, 5, 5, 6 ,7, 8, 9];
+  public notesArray: Notes = [1, 2, 3, 4, 5, 5, 6 ,7, 8, 9];
   @Input() currentValue: number | null = null;
   @Input() cellPosition: CellPosition = {
     rowPosition: 0,
